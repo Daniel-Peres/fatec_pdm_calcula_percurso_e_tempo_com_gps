@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:useDefaultMargins="true"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/concederPermissaoGpsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|fill_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="@string/conceder_permissao" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ativarGpsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="1"
+            android:text="@string/ativarGps" />
+
+        <Button
+            android:id="@+id/desativarGpsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="1"
+            android:text="@string/desativarGps" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <ImageButton
+            android:id="@+id/buscarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@android:drawable/ic_search_category_default" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/buscarTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/buscaEncontrar"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/colorPrimaryDark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/buscarTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/iniciarPercursoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="1"
+            android:text="@string/iniciarPercurso" />
+
+        <Button
+            android:id="@+id/terminarPercursoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="1"
+            android:text="@string/terminarPercurso" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/labelDistanciaPercorridaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:text="@string/distanciaPercorrida"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/distanciaPercorridaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:layout_weight="16"
+            android:gravity="center"
+            android:hint="@string/hintDistanciaPercorrida"
+            android:textSize="@dimen/text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/labelTempoPassadoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="@string/tempoPassado"
+            android:textSize="@dimen/text_size" />
+
+        <Chronometer
+            android:id="@+id/cronometro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/text_size" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/posicaoAtualTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Posicao Atual" />
+
+    <TextView
+        android:id="@+id/posicaoInicioTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PosicaoInicio" />
+
+    <TextView
+        android:id="@+id/posicaoFimTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PosicaoFim" />
+
+    <TextView
+        android:id="@+id/tempoPercursoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tempo Total do Percurso" />
+
+    <TextView
+        android:id="@+id/distanciaPercursoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Distancia Total" />
+
+</LinearLayout>

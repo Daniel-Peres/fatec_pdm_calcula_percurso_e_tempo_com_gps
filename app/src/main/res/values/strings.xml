@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Calcula Percurso e Tempo com GPS</string>
+    <string name="conceder_permissao">Conceder permissão de GPS</string>
+    <string name="ativarGps">Ativar GPS</string>
+    <string name="desativarGps">Desativar GPS</string>
+    <string name="iniciarPercurso">Iniciar Percurso</string>
+    <string name="terminarPercurso">Terminar Percurso</string>
+    <string name="buscaEncontrar">O que deseja encontrar ?</string>
+    <string name="distanciaPercorrida">Distância Percorrida</string>
+    <string name="hintDistanciaPercorrida">em metros</string>
+    <string name="tempoPassado">Tempo Passado</string>
+    <string name="precisa_permissao">É preciso conceder permissão para ativar GPS</string>
+    <string name="permissao_ja_concedida">Permissão já está concedida</string>
+    <string name="permissao_concedida">Permissão concedida com sucesso</string>
+    <string name="gps_ativado_sucesso">GPS ativado com sucesso</string>
+    <string name="gps_desativado_sucesso">GPS desativado com sucesso</string>
+    <string name="gps_nao_ativado">O GPS não está ativado</string>
+    <string name="gps_ja_ativado">O GPS já está ativado</string>
+    <string name="preciso_gps_inicioPercurso">É necessário habilitar o GPS para iniciar o percurso</string>
+    <string name="percurso_em_andamento">Já existe um percurso em andamento</string>
+    <string name="percurso_sem_andamento">Não existe nenhum percurso em andamento</string>
+    <string name="percurso_iniciado">Percurso Iniciado</string>
+    <string name="no_gps_no_app">Sem GPS não vai rolar</string>
+
+</resources>
