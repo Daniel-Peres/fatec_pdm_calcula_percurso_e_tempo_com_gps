@@ -287,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
                 distanciaTotal = calculoDistancia(posicaoInicial, posicaoFinal);
 
         distanciaPercorridaTextView.setText(distanciaTotal +" metros");
-        distanciaPercursoTextView.setText("Distancia Total = "+distanciaTotal+" metros");
+        distanciaPercursoTextView.setText("Distancia Total = "+distanciaTotal +" metros");
         Toast.makeText(MainActivity.this,
                 "Distancia Total = "+distanciaTotal+ " metros / Tempo Total= "+ chronometer.getText(), Toast.LENGTH_LONG).show();
         chronometer.setBase(SystemClock.elapsedRealtime()); // zerar cronometro
