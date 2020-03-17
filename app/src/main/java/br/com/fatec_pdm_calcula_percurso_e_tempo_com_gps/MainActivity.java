@@ -1,7 +1,6 @@
 package br.com.fatec_pdm_calcula_percurso_e_tempo_com_gps;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -39,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     public void setPercursoAtivo(boolean percursoAtivo) {this.percursoAtivo = percursoAtivo;}
 
     //textos
-    TextView labelTempoPassadoTextView;
-    TextView labelDistanciaPercorridaTextView;
     TextView distanciaPercorridaTextView;
 
     // botões
@@ -62,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView posicaoAtualTextView;
     private TextView posicaoInicioTextView;
     private TextView posicaoFimTextView;
+
     private double latitude;
     private double longitude;
 
@@ -189,11 +187,11 @@ public class MainActivity extends AppCompatActivity {
                 intent.setPackage("com.google.android.apps.maps");
                 startActivity(intent);
 
-                }
+            }
         });
     }
 
-//METODOS
+    //METODOS
     // inicializa o GPS
     private void configurarGPS() {
         locationManager =
@@ -204,13 +202,11 @@ public class MainActivity extends AppCompatActivity {
             public void onLocationChanged(Location location) {
                 latitude = location.getLatitude();
                 longitude = location.getLongitude();
-                latitudeInicial = location.getLatitude();
-                longitudeInicial = location.getLongitude();
                 posicaoAtualTextView.setText(
                         String.format("Lat: %f, Long: %f",
-                        latitude,
-                        longitude));
-                }
+                                latitude,
+                                longitude));
+            }
 
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) { }
@@ -220,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onProviderDisabled(String provider) {}
+
         };
     }
 
@@ -238,68 +235,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void ativarGPS(){
-            if (ActivityCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)
-                    == PackageManager.PERMISSION_GRANTED) {
-
-                    locationManager.requestLocationUpdates(
-                            LocationManager.GPS_PROVIDER,
-                            200, //tempo minimo em milisegundos para atualizar a app
-                            1, //distancia em metro
-                            locationListener
-                    );
-                    setGpsAtivado(true);
-                    Toast.makeText(MainActivity.this, R.string.gps_ativado_sucesso, Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(MainActivity.this, R.string.precisa_permissao, Toast.LENGTH_SHORT).show();
-            }
-
-    }
-
-    private void desativarGPS(){
-            locationManager.removeUpdates(locationListener);
-            Toast.makeText(this, R.string.gps_desativado_sucesso, Toast.LENGTH_SHORT).show();
-            setGpsAtivado(false);
-    }
-
-    private void iniciarPercurso(){
-        Toast.makeText(MainActivity.this, R.string.percurso_iniciado, Toast.LENGTH_SHORT).show();
-        setPercursoAtivo(true);
-        //Cronometro
-        chronometer.setBase(SystemClock.elapsedRealtime());
-        chronometer.start();
-        // Distancia
-        posicaoInicial.getLatitude();
-        posicaoInicial.getLongitude();
-
-    }
-
-    private void terminarPercurso(){
-        setPercursoAtivo(false);
-        chronometer.stop();
-        tempoPercursoTextView.setText("Tempo Total do Percurso = " + chronometer.getText());
-
-        posicaoFinal.getLatitude();
-        posicaoFinal.getLongitude();
-
-                distanciaTotal = calculoDistancia(posicaoInicial, posicaoFinal);
-
-        distanciaPercorridaTextView.setText(distanciaTotal +" metros");
-        distanciaPercursoTextView.setText("Distancia Total = "+distanciaTotal +" metros");
-        Toast.makeText(MainActivity.this,
-                "Distancia Total = "+distanciaTotal+ " metros / Tempo Total= "+ chronometer.getText(), Toast.LENGTH_LONG).show();
-        chronometer.setBase(SystemClock.elapsedRealtime()); // zerar cronometro
-
-    }
-
-    private Double calculoDistancia(Location posicaoInicial, Location posicaoFinal){
-        double distance = posicaoInicial.distanceTo(posicaoFinal);
-        return distance;
-    }
-
-
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
@@ -315,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                     locationManager.requestLocationUpdates(
                             locationManager.GPS_PROVIDER,
                             1000,
-                            1,
+                            0,
                             locationListener
                     );
                 }
@@ -326,6 +261,69 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    private void ativarGPS(){
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+
+            locationManager.requestLocationUpdates(
+                    LocationManager.NETWORK_PROVIDER,
+                    0, //tempo minimo em milisegundos para atualizar a app
+                    0, //distancia em metro
+                    locationListener
+            );
+            setGpsAtivado(true);
+            Toast.makeText(MainActivity.this, R.string.gps_ativado_sucesso, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MainActivity.this, R.string.precisa_permissao, Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private void desativarGPS(){
+        locationManager.removeUpdates(locationListener);
+        Toast.makeText(this, R.string.gps_desativado_sucesso, Toast.LENGTH_SHORT).show();
+        setGpsAtivado(false);
+    }
+
+    private void iniciarPercurso(){
+        Toast.makeText(MainActivity.this, R.string.percurso_iniciado, Toast.LENGTH_SHORT).show();
+        setPercursoAtivo(true);
+        //Cronometro
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        chronometer.start();
+        // Posição ao acionar botao iniciar percurso;
+        posicaoInicial.setLatitude(latitude);
+        posicaoInicial.setLongitude(longitude);
+    }
+
+    private void terminarPercurso(){
+        setPercursoAtivo(false);
+        chronometer.stop();
+        tempoPercursoTextView.setText("Tempo Total do Percurso = " + chronometer.getText());
+
+        // Posição ao acionar botao terminar percurso
+        posicaoFinal.setLatitude(latitude);
+        posicaoFinal.setLongitude(longitude);
+
+
+        distanciaTotal = calculoDistancia(posicaoInicial, posicaoFinal);
+        distanciaPercorridaTextView.setText(distanciaTotal +" metros");
+        distanciaPercursoTextView.setText("Distancia Total = "+distanciaTotal +" metros");
+        Toast.makeText(MainActivity.this,
+                "Distancia Total = "+distanciaTotal+ " metros / Tempo Total= "+ chronometer.getText(), Toast.LENGTH_LONG).show();
+        chronometer.setBase(SystemClock.elapsedRealtime()); // zerar cronometro
+
+    }
+
+    private float calculoDistancia(Location posicaoInicial, Location posicaoFinal){
+        return (float) posicaoFinal.distanceTo(posicaoInicial);
+    }
+
+
+
 
 
 }
