@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name = "app_name"> Ruta y tiempo con GPS </string>
+        <string name = "conceder_permissao"> Conceder permiso de GPS </string>
+        <string name = "ativarGps"> Habilitar GPS </string>
+        <string name = "iniciarPercurso"> Ruta de inicio </string>
+        <string name = "terminarPercurso"> Fin de ruta </string>
+        <string name = "buscaEncontrar"> ¿Qué quieres encontrar? </string>
+        <string name = "hintDistanciaPercorrida"> --.-- </string>
+        <string name = "precisa_permissao"> Debe otorgar permiso para activar el GPS </string>
+        <string name = "permissao_ja_concedida"> El permiso ya está otorgado </string>
+        <string name = "permissao_concedida"> Permiso otorgado con éxito </string>
+        <string name = "gps_ativado_sucesso"> GPS activado con éxito </string>
+        <string name = "gps_desativado_sucesso"> GPS deshabilitado con éxito </string>
+        <string name = "gps_nao_ativado"> El GPS no está activado </string>
+        <string name = "gps_ja_ativado"> GPS ya está activado </string>
+        <string name = "preciso_gps_inicioPercurso"> Debe habilitar el GPS para iniciar la ruta </string>
+        <string name = "percurso_em_andamento"> Ya hay una ruta en progreso </string>
+        <string name = "percurso_sem_andamento"> No hay ruta en progreso </string>
+        <string name = "percurso_iniciado"> Ruta iniciada </string>
+        <string name = "no_gps_no_app"> Sin GPS no rodará </string>
+        <string name = "tempoTotalPercurso"> Tiempo de viaje = </string>
+        <string name = "distanciaTotal"> Distancia total = </string>
+        <string name = "metros"> metros </string>
+        <string name = "tempoTotal"> \nTiempo total = </string>
+        <string name = "ultimo_percurso"> Curso Ultimo </string>
+        <string name = "tempo_percurso"> Tiempo de viaje </string>
+        <string name = "desativarGps"> Desactivar GPS </string>
+        <string name = "distanciaPercorrida"> Distancia recorrida (m) </string>
+        <string name = "tempoPassado"> Tiempo transcurrido </string>
+</resources>

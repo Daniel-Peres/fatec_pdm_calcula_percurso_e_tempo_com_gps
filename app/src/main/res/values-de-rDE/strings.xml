@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name = "app_name"> Route und Zeit mit GPS </string>
+        <string name = "conceder_permissao"> GPS-Berechtigung erteilen </string>
+        <string name = "ativarGps"> GPS aktivieren </string>
+        <string name = "iniciarPercurso"> Startpfad </string>
+        <string name = "terminarPercurso"> Endpfad </string>
+        <string name = "buscaEncontrar"> Was möchten Sie finden? </string>
+        <string name = "hintDistanciaPercorrida"> --.-- </string>
+        <string name = "precisa_permissao"> Sie müssen die Berechtigung zum Aktivieren von GPS </string> erteilen
+        <string name = "permissao_ja_concedida"> Die Berechtigung wurde bereits erteilt </string>
+        <string name = "permissao_concedida"> Berechtigung erfolgreich erteilt </string>
+        <string name = "gps_ativado_sucesso"> GPS erfolgreich aktiviert </string>
+        <string name = "gps_desativado_sucesso"> GPS erfolgreich deaktiviert </string>
+        <string name = "gps_nao_ativado"> GPS ist nicht aktiviert </string>
+        <string name = "gps_ja_ativado"> GPS ist bereits aktiviert </string>
+        <string name = "preciso_gps_inicioPercurso"> Sie müssen GPS aktivieren, um die Route zu starten </string>
+        <string name = "percurso_em_andamento"> Es ist bereits eine Route in Bearbeitung </string>
+        <string name = "percurso_sem_andamento"> Es ist keine Route in Bearbeitung </string>
+        <string name = "percurso_iniciado"> Route gestartet </string>
+        <string name = "no_gps_no_app"> Ohne GPS rollt es nicht </string>
+        <string name = "tempoTotalPercurso"> Reisezeit = </string>
+        <string name = "distanciaTotal"> Gesamtentfernung = </string>
+        <string name = "metros"> meter </string>
+        <string name = "tempoTotal"> \n Gesamtzeit = </string>
+        <string name = "ultimo_percurso"> Ultimo-Kurs </string>
+        <string name = "tempo_percurso"> Reisezeit </string>
+        <string name = "desativarGps">"GPS deaktivieren "</string>
+        <string name = "distanciaPercorrida"> zurückgelegte Strecke (m) </string>
+        <string name = "tempoPassado"> verstrichene Zeit </string>
+</resources>
