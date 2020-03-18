@@ -8,8 +8,7 @@
     android:background="@android:color/background_light"
     android:gravity="clip_vertical"
     android:orientation="vertical"
-    android:useDefaultMargins="true"
-    tools:context=".MainActivity">
+    android:useDefaultMargins="true">
 
     <Button
         android:id="@+id/concederPermissaoGpsButton"
@@ -17,8 +16,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|fill_horizontal"
         android:layout_marginTop="8dp"
-        android:elevation="5dp"
-        android:text="@string/conceder_permissao" />
+        android:backgroundTint="@color/colorAccent"
+        android:elevation="6dp"
+        android:shadowColor="#FFFFFF"
+        android:text="@string/conceder_permissao"
+        android:textColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,8 +35,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
             android:layout_weight="1"
-            android:elevation="5dp"
-            android:text="@string/ativarGps" />
+            android:backgroundTint="@color/colorAccent"
+            android:elevation="6dp"
+            android:shadowColor="#FFFFFF"
+            android:text="@string/ativarGps"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/desativarGpsButton"
@@ -42,21 +47,28 @@
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
             android:layout_weight="1"
-            android:elevation="5dp"
-            android:text="@string/desativarGps" />
+            android:backgroundTint="@color/colorAccent"
+            android:elevation="6dp"
+            android:shadowColor="#FFFFFF"
+            android:text="@string/desativarGps"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorPrimaryLight">
 
         <ImageButton
             android:id="@+id/buscarButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:elevation="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:elevation="6dp"
             app:srcCompat="@android:drawable/ic_search_category_default" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -90,8 +102,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
             android:layout_weight="1"
-            android:elevation="5dp"
-            android:text="@string/iniciarPercurso" />
+            android:backgroundTint="@color/colorAccent"
+            android:elevation="6dp"
+            android:shadowColor="#FFFFFF"
+            android:text="@string/iniciarPercurso"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/terminarPercursoButton"
@@ -99,14 +114,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
             android:layout_weight="1"
-            android:elevation="5dp"
-            android:text="@string/terminarPercurso" />
+            android:backgroundTint="@color/colorAccent"
+            android:elevation="6dp"
+            android:shadowColor="#FFFFFF"
+            android:text="@string/terminarPercurso"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
         android:background="@color/colorPrimary"
         android:gravity="center">
 
@@ -117,8 +137,6 @@
             android:layout_gravity="center_horizontal|fill_horizontal|center_vertical"
             android:layout_margin="5dp"
             android:layout_weight="2"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center"
             android:text="@string/distanciaPercorrida"
             android:textColor="@android:color/white"
             android:textSize="@dimen/text_size" />
@@ -139,18 +157,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
         android:background="@color/colorPrimary"
         android:gravity="center">
 
         <TextView
             android:id="@+id/labelTempoPassadoTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="148dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center_horizontal|center_vertical"
+            android:gravity="center_vertical"
             android:text="@string/tempoPassado"
             android:textColor="@android:color/white"
             android:textSize="@dimen/text_size" />
@@ -170,16 +189,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="15dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorAccent"
         android:gravity="center"
+        android:padding="8dp"
         android:text="@string/ultimo_percurso"
         android:textColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="vertical">
@@ -191,6 +215,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="@color/colorAccent"
             android:gravity="center"
             android:text="@string/distanciaPercorrida"
             android:textColor="@android:color/white"
@@ -213,6 +238,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="@color/colorAccent"
             android:gravity="center"
             android:text="@string/tempo_percurso"
             android:textColor="@android:color/white"
