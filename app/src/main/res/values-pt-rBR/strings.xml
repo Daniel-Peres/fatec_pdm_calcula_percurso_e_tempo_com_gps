@@ -28,4 +28,5 @@
     <string name="desativarGps">Desativar GPS</string>
     <string name="distanciaPercorrida">Distância Percorrida  (m)</string>
     <string name="tempoPassado">Tempo Decorrido</string>
+    <string name="busca">Procurar</string>
 </resources>

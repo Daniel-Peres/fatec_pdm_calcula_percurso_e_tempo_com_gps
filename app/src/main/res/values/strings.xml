@@ -27,4 +27,5 @@
     <string name="distanciaPercorrida">Distance traveled (m)</string>
     <string name="tempoPassado">Elapsed Time</string>
     <string name="metros">meters</string>
+    <string name="busca">Search</string>
 </resources>

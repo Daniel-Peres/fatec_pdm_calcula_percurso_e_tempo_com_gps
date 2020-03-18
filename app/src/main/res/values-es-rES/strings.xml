@@ -27,5 +27,6 @@
         <string name = "tempo_percurso"> Tiempo de viaje </string>
         <string name = "desativarGps"> Desactivar GPS </string>
         <string name = "distanciaPercorrida"> Distancia recorrida (m) </string>
-        <string name = "tempoPassado"> Tiempo transcurrido </string>
+        <string name = "tempoPassado"> Tiempo transcurrido </string>
+        <string name="busca">Buscar</string>
 </resources>

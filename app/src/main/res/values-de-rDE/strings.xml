@@ -28,4 +28,5 @@
         <string name = "desativarGps">"GPS deaktivieren "</string>
         <string name = "distanciaPercorrida"> zurückgelegte Strecke (m) </string>
         <string name = "tempoPassado"> verstrichene Zeit </string>
+        <string name="busca">Suche</string>
 </resources>
