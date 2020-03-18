@@ -2,8 +2,8 @@
     <string name="app_name">Route and Time with GPS</string>
     <string name="conceder_permissao">Grant GPS permission</string>
     <string name="ativarGps">Enable GPS</string>
-    <string name="iniciarPercurso">" Start Path"</string>
-    <string name="terminarPercurso">End Path</string>
+    <string name="iniciarPercurso">Start Run</string>
+    <string name="terminarPercurso">Finish Run</string>
     <string name="buscaEncontrar">What do you want to find?</string>
     <string name="hintDistanciaPercorrida">--.--</string>
     <string name="precisa_permissao">You need to grant permission to activate GPS</string>

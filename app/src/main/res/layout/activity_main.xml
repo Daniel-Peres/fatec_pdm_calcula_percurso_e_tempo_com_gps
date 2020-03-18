@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:layout_margin="5dp"
     android:background="@android:color/background_light"
     android:gravity="clip_vertical"
     android:orientation="vertical"
@@ -15,29 +15,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|fill_horizontal"
-        android:layout_marginTop="8dp"
         android:backgroundTint="@color/colorAccent"
-        android:elevation="6dp"
-        android:shadowColor="#FFFFFF"
+        android:shadowColor="@android:color/black"
         android:text="@string/conceder_permissao"
         android:textColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/ativarGpsButton"
-            android:layout_width="wrap_content"
+            android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
             android:layout_weight="1"
             android:backgroundTint="@color/colorAccent"
-            android:elevation="6dp"
-            android:shadowColor="#FFFFFF"
+            android:shadowColor="@android:color/black"
             android:text="@string/ativarGps"
             android:textColor="@android:color/white" />
 
@@ -48,8 +44,7 @@
             android:layout_gravity="fill_horizontal"
             android:layout_weight="1"
             android:backgroundTint="@color/colorAccent"
-            android:elevation="6dp"
-            android:shadowColor="#FFFFFF"
+            android:shadowColor="@android:color/black"
             android:text="@string/desativarGps"
             android:textColor="@android:color/white" />
     </LinearLayout>
@@ -57,54 +52,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="5dp"
-        android:background="@color/colorPrimaryLight">
-
-        <ImageButton
-            android:id="@+id/buscarButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/colorPrimaryDark"
-            android:elevation="6dp"
-            app:srcCompat="@android:drawable/ic_search_category_default" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/buscarTextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:hint="@string/buscaEncontrar"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimaryDark">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/buscarTextInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/iniciarPercursoButton"
-            android:layout_width="wrap_content"
+            android:layout_width="173dp"
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
             android:layout_weight="1"
             android:backgroundTint="@color/colorAccent"
-            android:elevation="6dp"
-            android:shadowColor="#FFFFFF"
+            android:shadowColor="@android:color/black"
             android:text="@string/iniciarPercurso"
             android:textColor="@android:color/white" />
 
@@ -115,8 +73,7 @@
             android:layout_gravity="fill_horizontal"
             android:layout_weight="1"
             android:backgroundTint="@color/colorAccent"
-            android:elevation="6dp"
-            android:shadowColor="#FFFFFF"
+            android:shadowColor="@android:color/black"
             android:text="@string/terminarPercurso"
             android:textColor="@android:color/white" />
     </LinearLayout>
@@ -132,7 +89,7 @@
 
         <TextView
             android:id="@+id/labelDistanciaPercorridaTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="172dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|fill_horizontal|center_vertical"
             android:layout_margin="5dp"
@@ -147,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal|center_vertical"
             android:layout_weight="16"
-            android:gravity="center"
+            android:gravity="center_horizontal|center_vertical"
             android:hint="@string/hintDistanciaPercorrida"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size" />
@@ -157,15 +114,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="8dp"
         android:layout_marginRight="5dp"
         android:background="@color/colorPrimary"
         android:gravity="center">
 
         <TextView
             android:id="@+id/labelTempoPassadoTextView"
-            android:layout_width="148dp"
+            android:layout_width="184dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
@@ -180,7 +137,7 @@
             android:layout_height="wrap_content"
 
             android:layout_weight="3"
-            android:gravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size" />
 
@@ -190,11 +147,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="5dp"
         android:background="@color/colorAccent"
-        android:gravity="center"
-        android:padding="8dp"
+        android:gravity="center|center_vertical"
         android:text="@string/ultimo_percurso"
         android:textColor="@android:color/white" />
 
@@ -202,7 +158,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="8dp"
         android:layout_marginRight="5dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
@@ -213,10 +168,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:background="@color/colorAccent"
-            android:gravity="center"
+            android:gravity="center|center_vertical"
             android:text="@string/distanciaPercorrida"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
@@ -236,10 +193,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:background="@color/colorAccent"
-            android:gravity="center"
+            android:gravity="center|center_vertical"
             android:text="@string/tempo_percurso"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
@@ -254,6 +213,43 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorPrimaryLight">
+
+        <ImageButton
+            android:id="@+id/buscarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="6dp"
+            android:focusable="true"
+            app:srcCompat="@android:drawable/ic_search_category_default"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/buscarTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/colorPrimaryDark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/buscarTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/buscaEncontrar"
+                android:gravity="center"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
 </LinearLayout>

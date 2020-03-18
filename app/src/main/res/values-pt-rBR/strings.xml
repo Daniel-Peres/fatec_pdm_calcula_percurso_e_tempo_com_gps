@@ -23,7 +23,7 @@
     <string name="distanciaTotal">Distância Total = </string>
     <string name="metros"> metros</string>
     <string name="tempoTotal"> \nTempo Total = </string>
-    <string name="ultimo_percurso">Ultimo Percurso</string>
+    <string name="ultimo_percurso">Último Percurso</string>
     <string name="tempo_percurso">Tempo Percurso</string>
     <string name="desativarGps">Desativar GPS</string>
     <string name="distanciaPercorrida">Distância Percorrida  (m)</string>

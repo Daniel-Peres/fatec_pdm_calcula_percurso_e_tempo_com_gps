@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     Button iniciarPercursoButton;
     Button terminarPercursoButton;
     ImageButton buscarButton;
-
     //TextInputLayout Buscar
     TextInputLayout buscaTextInputLayout;
     TextInputEditText buscarTextInputEditText;
@@ -117,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 if(getGpsAtivado()){
                     Toast.makeText(MainActivity.this, R.string.gps_ja_ativado, Toast.LENGTH_SHORT).show();
                 }else{
-                    ativarGPS();
+                    ativarGPS(); //ativa GPS
                 }
             }
         });
@@ -168,22 +167,25 @@ public class MainActivity extends AppCompatActivity {
         buscarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse(
-                        String.format(
-                                Locale.getDefault(),
-                                "geo:%f,%f?q=%s",
-                                latitude,
-                                longitude,
-                                buscarTextInputEditText.getText()// adiciona na query o que foi digitado
-                        )
-                );
-                Intent intent = new Intent (
-                        Intent.ACTION_VIEW,
-                        uri
-                );
-                intent.setPackage("com.google.android.apps.maps");
-                startActivity(intent);
-
+                if(getGpsAtivado()){
+                    Uri uri = Uri.parse(
+                            String.format(
+                                    Locale.getDefault(),
+                                    "geo:%f,%f?q=%s",
+                                    latitude,
+                                    longitude,
+                                    buscarTextInputEditText.getText()// adiciona na query o que foi digitado
+                            )
+                    );
+                    Intent intent = new Intent (
+                            Intent.ACTION_VIEW,
+                            uri
+                    );
+                    intent.setPackage("com.google.android.apps.maps");
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(MainActivity.this, R.string.gps_nao_ativado, Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
