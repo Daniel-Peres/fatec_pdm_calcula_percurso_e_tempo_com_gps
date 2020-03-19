@@ -101,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if(ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) ==
+                PackageManager.PERMISSION_GRANTED){
+            // Se permissão concedida, muda texto do botão para verde ativo
+            concederPermissaoGpsButton.setTextColor(getColor(R.color.colorActiveButton));
+        }
+
 //botao conceder permissao GPS
         concederPermissaoGpsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,11 +231,11 @@ public class MainActivity extends AppCompatActivity {
         if(ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) ==
                 PackageManager.PERMISSION_GRANTED){ // Se permissao já concedida
             Toast.makeText(MainActivity.this, R.string.permissao_ja_concedida, Toast.LENGTH_LONG).show();
+            concederPermissaoGpsButton.setTextColor(getColor(R.color.colorActiveButton));
         }else{
             ActivityCompat.requestPermissions( // se não concedida, pede permissão
                     MainActivity.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, GPS_REQUEST_CODE);
-
         }
     }
 
@@ -251,6 +257,8 @@ public class MainActivity extends AppCompatActivity {
                             0,
                             locationListener
                     );
+                    // Se permissão concedida, muda texto do botão para verde  ativo
+                    concederPermissaoGpsButton.setTextColor(getColor(R.color.colorActiveButton));
                     Toast.makeText(MainActivity.this, R.string.permissao_concedida, Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -274,6 +282,7 @@ public class MainActivity extends AppCompatActivity {
                     locationListener
             );
             setGpsAtivado(true);
+            ativarGpsButton.setTextColor(getColor(R.color.colorActiveButton)); // Texto botão GPS fica verde
             Toast.makeText(MainActivity.this, R.string.gps_ativado_sucesso, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(MainActivity.this, R.string.precisa_permissao, Toast.LENGTH_SHORT).show();
@@ -285,6 +294,7 @@ public class MainActivity extends AppCompatActivity {
         locationManager.removeUpdates(locationListener);
         Toast.makeText(this, R.string.gps_desativado_sucesso, Toast.LENGTH_SHORT).show();
         setGpsAtivado(false);
+        ativarGpsButton.setTextColor(getColor(R.color.colorInactiveButton)); // Texto botão GPS fica branco
     }
 
     private void iniciarPercurso(){
@@ -295,17 +305,16 @@ public class MainActivity extends AppCompatActivity {
         // Posição ao acionar botao iniciar percurso;
         posicaoInicial.setLatitude(latitude);
         posicaoInicial.setLongitude(longitude);
+        // botão Iniciar percurso fica com Texto verde ( ativado )
+        iniciarPercursoButton.setTextColor(getColor(R.color.colorActiveButton));
     }
 
     @SuppressLint("DefaultLocale")
     private void terminarPercurso(){
         chronometer.stop();
         tempoPercursoTextView.setText(chronometer.getText());
-
-        // Posição ao acionar botao terminar percurso
-//        posicaoFinal.setLatitude(latitude);
-//        posicaoFinal.setLongitude(longitude);
-
+        // botão Iniciar percurso fica com Texto branco ( desativado )
+        iniciarPercursoButton.setTextColor(getColor(R.color.colorInactiveButton));
 
         distanciaPercursoTextView.setText(String.format("%.2f",posicaoInicial.distanceTo(posicaoFinal)));
 
